@@ -321,9 +321,18 @@ hr {
  
 /* Main section styling */
 /* Main Section */
+
+main {
+  max-width: 1200px; /* 최대 너비를 늘림 */
+  margin:  auto; /* 상하 좌우 여백 조정 */
+  padding: 20px; /* 내부 여백 증가 */
+}
+
+
 .test-section {
   text-align: center;
-  max-width: 900px;
+  height: auto;
+  width: 1100px;
   margin: 40px auto;
   padding: 20px;
   border-radius: 10px;
@@ -332,20 +341,29 @@ hr {
 }
 
 /* Header Section */
-.header {
-  margin-bottom: 20px;
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 160px;
+  margin-right: 160px;
+  margin-top : 10px;
+  margin-bottom: 10px;
+
 }
 
 .header-title {
-  font-size: 24px;
+  font-size: 60px;
   font-weight: bold;
   margin-bottom: 10px;
   color: #333;
 }
 
 .header-logo {
-  width: 50px;
+  width: 109px;
+  height: 101px;
 }
+
 
 /* Content Section */
 .step-title {
@@ -418,6 +436,7 @@ hr {
 
   }
   .footer__aside-bottom {
+    margin-top: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -425,27 +444,35 @@ hr {
   }
   
   .footer__copyright {
-    font-size: 20px;
+    font-size: 10px;
     padding-left: 2cm;
   }
   
   .footer__payment-icons img {
     margin-left: 10px;
-    width: 38px;
-    height: 24px;
+    width: 30px;
+    height: 20px;
   } 
   
   .footer__info {
     padding-top: 10px;
-    font-size: 14px;
+    font-size: 10px;
     display: flex;
-    gap: 10px;
+    gap: 20px;
     margin-left: 20px;
   }
 
+
+  .footer_right {
+    font-size: 14px; /* 원하는 크기로 조정 */
+    font-weight: normal; /* 필요 시 글자 두께 조정 */
+    color: #ffffff; /* 필요하면 글자 색상도 변경 */
+}
+
+
   footer >  hr {
     position: relative;
-    width: 2000vw; /* Full viewport width to ensure it spans the screen */
+    width: auto; /* Full viewport width to ensure it spans the screen */
     margin: 0; /* Remove any default margins */
     border: none; /* Remove default borders */
     border-top: 1px solid #ffffff; /* Add a single custom border */
