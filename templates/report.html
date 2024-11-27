@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles_report.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles_report.css') }}">
     <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
     <!-- Bootstrap CSS -->
     <link
@@ -16,7 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap"
       rel="stylesheet" />
     <title>CODEEG Test</title>
-    <script defer src="script.js"></script>
+    <script defer src="{{ url_for('static', filename='js/script.js') }}"></script>
   </head>
 
   <body>
@@ -47,40 +47,38 @@
 
     <nav class="navbar">
       <div class="navbar-left">
-        <div class="dropdown">
-          <button class="dropdown-toggle">☰ BROWSE CATEGORIES</button>
-          <div class="dropdown-menu">
-            <a href="#">Category 1</a>
-            <a href="#">Category 2</a>
-            <a href="#">Category 3</a>
+          <div class="dropdown">
+              <button class="dropdown-toggle">☰ BROWSE CATEGORIES</button>
+              <div class="dropdown-menu">
+                  <a href="#">Category 1</a>
+                  <a href="#">Category 2</a>
+                  <a href="#">Category 3</a>
+              </div>
           </div>
-        </div>
-        <a href="#" class="nav-link">HOME &#9662;</a>
-        <a href="#" class="nav-link">SHOPE &#9662;</a>
-        <a href="#" class="nav-link">BLOG &#9662;</a>
-      </div>
+          <a href="#" class="nav-link">HOME &#9662;</a>
+          <a href="#" class="nav-link">SHOP &#9662;</a>
+          <a href="{{ url_for('report') }}" class="nav-link">REPORT &#9662;</a>
 
-      <div class="nav-item">
-        <div class="navbar-right">
-          <button class="codeeg-button" onclick="location.href='index.html'">CODEEG</button>
+      </div>
+      <div class="navbar-right">
+          <button class="codeeg-button" onclick="location.href='{{ url_for('index') }}'">CODEEG</button>
           <button class="wishlist-button">♡</button>
           <button class="cart-button">
-            <img
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA60lEQVR4nO3WsQpBURjA8VsmKwNG5Q1MJoOFlFmKJ7BY5QHkJZTJG9ydYrPZhZXBoAh/XX1ic45z7pH4z1/n11nOdzzvJwPGPFoA1U/AQScg4wS/BwxuNHQ8lwEVgaeu4SiwB85AwjXuy60bruEm4TR6BadDglcqt56HAPdV4F4IcE0FzltGL0BSBY4AG4vw7CX6hA8twl0duG4RLujAMVkYpu2DF1EZFnxiAfa1UIHbFuDWO3AK2BmgWyCuDQueC9YkcNQAD/LByL6F/m5AGVgHGwYomc4pJwfdW5rOfQVckkOXQNF07p/nqit4etkTHpfOQQAAAABJRU5ErkJggg=="
-              alt="shopping-cart--v1" />
+              <img src="{{ url_for('static', filename='images/cart.png') }}" alt="Cart Icon" class="cart-icon">
           </button>
-        </div>
+          
       </div>
-    </nav>
+  </nav>
 
-    <nav>
+  <nav>
       <div class="header-container">
-        <div class="header-title">CODEEG TEST</div>
-        <img src="img/CODEEG_logo.png" alt="Logo" class="header-logo" />
+          <div class="header-title">CODEEG TEST</div>
+          <img src="{{ url_for('static', filename='images/CODEEG_logo.png') }}" alt="Logo" class="header-logo">
+          
       </div>
-      <hr />
-    </nav>
-
+      <hr>
+      
+      </nav>  
     <main>
       <div class="report-c">
         <h1 class="report-title">Report</h1>
@@ -90,13 +88,13 @@
       <section class="selected-clothes">
         <h2>Selected Clothes</h2>
         <div class="clothing-grid">
-          <img src="img/Sweater.png" alt="White Shirt" height="157.14" />
-          <img src="img/clothes_2.jpg" alt="Hoodie" />
-          <img src="img/clothes_3.png" alt="Sweater" />
-          <img src="img/clothes_4.png" alt="Graphic Hoodie" />
-          <img src="img/clothes_5.png" alt="Jeans" />
-          <img src="img/clothes_6.png" alt="Black Pants" />
-          <img src="img/clothes_7.png" alt="Gray Pants" />
+          <img src="{{ url_for('static', filename='images/Sweater.png') }}" alt="White Shirt" height="157.14" />
+          <img src="{{ url_for('static', filename='images/clothes_2.jpg') }}" alt="Hoodie" />
+          <img src="{{ url_for('static', filename='images/clothes_3.png') }}" alt="Sweater" />
+          <img src="{{ url_for('static', filename='images/clothes_4.png') }}" alt="Graphic Hoodie" />
+          <img src="{{ url_for('static', filename='images/clothes_5.png') }}" alt="Jeans" />
+          <img src="{{ url_for('static', filename='images/clothes_6.png') }}" alt="Black Pants" />
+          <img src="{{ url_for('static', filename='images/clothes_7.png') }}" alt="Gray Pants" />
         </div>
       </section>
       <hr />

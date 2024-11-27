@@ -219,6 +219,11 @@ body {
   margin-right: 15px;
   transition: transform 0.2s ease, color 0.2s ease; /* 효과 추가 */
 }
+.cart-icon {
+  width: 24px; /* Set desired width */
+  height: 24px; /* Set desired height */
+  object-fit: contain; /* Ensures proper scaling of the image */
+}
 
 .cart-button:hover {
   transform: scale(1.2); /* 버튼 커지는 효과 */

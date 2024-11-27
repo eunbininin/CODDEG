@@ -229,8 +229,16 @@ body {
   border: none;
   cursor: pointer;
   font-size: 20px;
+  height: 30px;
+  width: 30px;
   margin-right: 15px;
   transition: transform 0.2s ease, color 0.2s ease; /* 효과 추가 */
+}
+
+.cart-icon {
+  width: 24px; /* Set desired width */
+  height: 24px; /* Set desired height */
+  object-fit: contain; /* Ensures proper scaling of the image */
 }
 
 .cart-button:hover {
