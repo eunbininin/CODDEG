@@ -106,6 +106,13 @@ def erp_combination(
                 times_list[i],
                 filename=f"shoes_{i+1}_electrode",
             )
+    elif clothes_type == "tops":
+        for i in range(num_images):
+            plot_eeg.plot_electrode(
+                avg_evoked_list[i],
+                times_list[i],
+                filename=f"tops_{i+1}_electrode",
+            )        
     else:
         raise ValueError("Invalid clothes type")
 
