@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 import os
+import threading
 from erp_combination import erp_combination
 
 app = Flask(__name__)
@@ -16,12 +17,13 @@ def step1():
 def report():
     return render_template('report.html')
 
-
+def run_erp_combination_async(*args, **kwargs):
+    threading.Thread(target=erp_combination, args=args, kwargs=kwargs, daemon=True).start()
 
 @app.route('/run_erp_combination_top', methods=['POST'])
 def run_erp_combination_top():
-    # Call the erp_combination function with appropriate arguments
-    erp_combination(
+    # 비동기적으로 ERP 조합 실행
+    run_erp_combination_async(
         screen_width=1920,
         screen_height=1080,
         fs=256,
@@ -42,11 +44,10 @@ def run_erp_combination_top():
     )
     return redirect(url_for('step1'))
 
-
 @app.route('/run_erp_combination_bottom', methods=['POST'])
 def run_erp_combination_bottom():
-    # Call the erp_combination function with appropriate arguments
-    erp_combination(
+    # 비동기적으로 ERP 조합 실행
+    run_erp_combination_async(
         screen_width=1920,
         screen_height=1080,
         fs=256,
@@ -66,7 +67,6 @@ def run_erp_combination_bottom():
         mode='all'
     )
     return redirect(url_for('step1'))
-
 
 if __name__ == '__main__':
     app.run(debug=True)
